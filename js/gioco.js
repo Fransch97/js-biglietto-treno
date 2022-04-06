@@ -9,7 +9,26 @@ console.log(player, "player");
 let pc = Math.ceil(Math.random()*3);
 console.log(pc, "pc");
 
+let playerPoints = 0;
+let PcPoints = 0;
+console.log(PcPoints, playerPoints)
+
 if(player < 1 || player > 3 || isNaN(player)){
+    alert("HAI SBAGLIATO NEL INSERIRE IL NUMERO O HAI SCRITTO UNA LETTERA DEL ALFABETO");
+    alert("PRONTO A RIPROVARE?");
+    alert("SICURO?");
+    alert("SICURISSIMO/A?");
+    alert("VABBENE ALLORA RIGIOCHIAMO");
+    alert("LOL PENSAVI E?");
+    alert("OK DAI ADESSO INIZIAMO NON FARE SCHERZI");
+    alert("LOL NO OK DOPO QUESTO RINIZIA LA SCELTA NEL GIOCO PROMESSO");
+    alert("HAHAHA PENSAVI EEEEEH ;D? OK INIZIAMO");
+    alert("HAHAHAHAHAHAHAHAHAHA :,D");
+    alert("NON CI SPERI PIU VERO? ");
+    alert("INEFFETTI");
+    alert("OK SE SEI ARRIVATO FINO A QUI TELO SEI MERITATO");
+    alert("RICORDA 1=>CARTA  2=>SASSO  3=>FORBICE");
+
     player = parseInt(prompt("ATTENZIONE ULTIMA POSSIBILITA !!1 = carta!!  !!2 = sasso!!  !!3 = forbice!! Inserisci SOLO NUMERO SCELTO FRA 1 E 3"));
 }
 
@@ -36,6 +55,7 @@ if(player){
         `;
         }else if(pc === 1 && player === 2){
             console.log("Hai perso");
+            PcPoints += 1;
             document.getElementById("pagina").innerHTML = 
         `
         <h1 class="pt-5 pb-5">HAI PERSO</h1>
@@ -56,6 +76,8 @@ if(player){
         `;
         }else if(pc === 1 && player === 3){
             console.log("Hai vinto");
+            playerPoints = 1 + playerPoints;
+            console.log(playerPoints, "hai vinto nel if")
             document.getElementById("pagina").innerHTML = 
             `
         <h1 class="pt-5 pb-5">HAI VINTO</h1>
