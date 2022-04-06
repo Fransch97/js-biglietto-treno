@@ -42,8 +42,40 @@ let prezzoTotGenerale = kmDaPercorrere * prezzoPerKm;
 console.log(prezzoTotGenerale);
 
 let prezzoFinale = prezzoTotGenerale;
+//perndere oggetto data
+const orario = new Date();
+console.log(orario);
+
+let ora = orario.getHours();
+console.log(ora);
+
+let oraRimanente = ora + 1;
+
+console.log("ora rimanente1",oraRimanente);
+
+let minuti = orario.getMinutes();
+console.log(minuti);
+
+let secondi = orario.getSeconds();
+console.log(secondi);
+
+if(ora < 10){
+ora = "0"+ora;
+}
+if(minuti<10){
+    minuti = "0"+minuti;
+
+}
+if(secondi<10){
+    secondi = "0"+secondi;
+
+}
 
 
+let orarioCompleto = `${ora}:${minuti}:${secondi}`;
+console.log(orarioCompleto)
+let orarioRimanenteValido = `${oraRimanente}:${minuti}:${secondi}`;
+console.log(orarioRimanenteValido);
 if(kmDaPercorrere && etaUtente){
 
     if(etaUtente > vecchio && etaUtente < 100){
@@ -59,17 +91,26 @@ if(kmDaPercorrere && etaUtente){
         <li class="text-center"><span>La sua età: ${etaUtente} anni</span></li>
     </ul>
     
-    <ul class="text-center pb-5 pt-5">
+    <ul class="text-center  pb-5">
         <li class="text-center"> <h3>Il prezzo del biglietto è</h3> </li>
         <li class="text-center"><span>${prezzoFinale}€</span></li>
-        <li class="text-center"><span>Ha avuto uno sconto del 40%</span></li>
+        <li class="text-center"><span>Ha avuto uno sconto del 40% perchè over 65</span></li>
+    </ul>
+
+    <ul class="text-center pb-5 ">
+        <li class="text-center"> <h3>Validità del biglietto</h3> </li>
+        <li class="text-center"><span>Il biglietto con il prezzo stabile è valido solo per un ora</span></li>
+        <li class="text-center"><span>Questo prezzo è stato calcolato alle ${orarioCompleto}</span></li>
+        <li class="text-center"><span>Questo prezzo è valido fino alle ${orarioRimanenteValido}</span></li>
+
+        
     </ul>
     <div class="container-fluid text-center">
         <div class="row">
             <div class="col">
                 <a href="#" class="btn btn-primary">Aquista</a>
-                <a href="index.html" class="btn btn-secondary">Ricaricare paggina</a>
-                <a href="gioco.html" class="btn btn-warning">Giocare a carta/forbice/sasso?</a>
+                <a href="index.html" class="btn btn-warning">Ricaricare pagina</a>
+                <a href="gioco.html" class="btn btn-dark">Giocare a carta/forbice/sasso? &#128521;</a>
             </div>
         </div>
     </div>
@@ -96,17 +137,25 @@ if(kmDaPercorrere && etaUtente){
             <li class="text-center"><span>La sua età: ${etaUtente} anni</span></li>
         </ul>
         
-        <ul class="text-center pb-5 pt-5">
+        <ul class="text-center pb-5 ">
             <li class="text-center"> <h3>Il prezzo del biglietto è</h3> </li>
             <li class="text-center"><span>${prezzoFinale}€</span></li>
             <li class="text-center"><span>Ha avuto uno sconto del 20% perchè minorenne</span></li>
         </ul>
+        
+        <ul class="text-center pb-5 ">
+            <li class="text-center"> <h3>Validità del biglietto</h3> </li>
+            <li class="text-center"><span>Il biglietto con il prezzo stabile è valido solo per un ora</span></li>
+            <li class="text-center"><span>Questo prezzo è stato calcolato alle ${orarioCompleto}</span></li>
+            <li class="text-center"><span>Questo prezzo è valido fino alle ${orarioRimanenteValido}</span></li>
+        </ul>
+
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
                     <a href="#" class="btn btn-primary">Aquista</a>
-                    <a href="index.html" class="btn btn-secondary">Ricaricare paggina</a>
-                    <a href="gioco.html" class="btn btn-warning">Giocare a carta/forbice/sasso?</a>
+                    <a href="index.html" class="btn btn-warning">Ricaricare pagina</a>
+                    <a href="gioco.html" class="btn btn-dark">Giocare a carta/forbice/sasso? &#128521;</a>
                 </div>
             </div>
         </div>
@@ -123,16 +172,23 @@ if(kmDaPercorrere && etaUtente){
             <li class="text-center"><span>La sua età: ${etaUtente} anni</span></li>
         </ul>
         
-        <ul class="text-center pb-5 pt-5">
+        <ul class="text-center pb-5 ">
             <li class="text-center"> <h3>Il prezzo del biglietto è</h3> </li>
             <li class="text-center"><span>${prezzoFinale.toFixed(2)}€</span></li>
+        </ul>
+        
+        <ul class="text-center pb-5 ">
+            <li class="text-center"> <h3>Validità del biglietto</h3> </li>
+            <li class="text-center"><span>Il biglietto con il prezzo stabile è valido solo per un ora</span></li>
+            <li class="text-center"><span>Questo prezzo è stato calcolato alle ${orarioCompleto}</span></li>
+            <li class="text-center"><span>Questo prezzo è valido fino alle ${orarioRimanenteValido}</span></li>
         </ul>
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
                     <a href="#" class="btn btn-primary">Aquista</a>
-                    <a href="index.html" class="btn btn-secondary">Ricaricare pagina</a>
-                    <a href="gioco.html" class="btn btn-warning">Giocare a carta/forbice/sasso?</a>
+                    <a href="index.html" class="btn btn-warning">Ricaricare pagina</a>
+                    <a href="gioco.html" class="btn btn-dark">Giocare a carta/forbice/sasso? &#128521;</a>
                 </div>
             </div>
         </div>
